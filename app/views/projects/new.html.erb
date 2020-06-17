@@ -1,0 +1,39 @@
+<div class="text-center">
+  <h1>案件登録</h1>
+</div>
+
+ <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @project, local: true) do |f| %>
+      <%= render 'layouts/error_projects', model: f.object %>
+
+       <div id="form-group">
+         
+         <%= f.label :agent_id, 'エージェント' %>
+         <%= f.collection_select  :agent_id, Agent.all, :id, :company, {}, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :title, '案件名' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :content, '概要' %>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :status, 'ステータス' %>
+        <%= f.text_field :status, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :schedule, '日程' %>
+        <%= f.date_field :schedule, class: 'form-control' %>
+      </div>
+  
+      <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+    <% end %>
+　 </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="text-center">
+  <h1>エージェント情報</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 top">
+　　　<table class="table table-striped">
+　　　  <tr>
+　　　    <td>紹介会社名</td>
+　　　    <td><%= @agent.company %> </td>
+　　　  </tr>
+　　　  <tr>
+　　　    <td>担当者</td>
+　　　    <td><%= @agent.name %></td>
+　　　  </tr>
+　　　  <tr>
+　　　    <td>電話</td>
+　　　    <td><%= @agent.phone %></td>
+　　　  </tr>
+　　　  <tr>
+　　　    <td>メール</td>
+　　　    <td><%= @agent.email %></td>
+　　　  </tr>
+　　　  <tr>
+　　　    <td>URL</td>
+　　　    <td><%= @agent.url %></td>
+　　　  </tr>
+　　　</table>
+　　　<ul class="list-group">
+         <li class="list-group-item border border-0 text-center"><%= link_to '紹介会社一覧に戻る', agents_path %></li>
+      </ul>
+    </div>
+    <div class="col-sm-4 border">
+　　　<ul class="list-group">
+　　　  <li class="list-group-item"><%= link_to '編集', edit_agent_path(@agent) %></li>
+　　　  <li class="list-group-item"><%= link_to '削除', @agent, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
+
+　　　  <li class="list-group-item"><%= link_to '関連プロジェクト', projectlists_agent_path(@agent) %></li>
+
+　　　</ul>
+    </div>
+  </div>
+</div>

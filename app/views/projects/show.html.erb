@@ -1,0 +1,41 @@
+<div class="text-center">
+  <h1>案件情報</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 top">
+　　　<table class="table table-striped">
+　　　  <tr>
+　　　    <td>紹介会社</td>
+　　　    <td><%= @project.agent.company %> </td>
+　　　  </tr>
+　　　  <tr>
+　　　    <td>案件名</td>
+　　　    <td><%= @project.title %> </td>
+　　　  </tr>
+　　　  <tr>
+　　　    <td>概要</td>
+　　　    <td><%= @project.content %></td>
+　　　  </tr>
+　　　  <tr>
+　　　    <td>ステータス</td>
+　　　    <td><%= @project.status %></td>
+　　　  </tr>
+　　　  <tr>
+　　　    <td>スケジュール</td>
+　　　    <td><%= @project.schedule %></td>
+　　　  </tr>
+　　　</table>
+　　　<ul class="list-group">
+         <li class="list-group-item border border-0 text-center"><%= link_to '紹介会社一覧に戻る', projects_path %></li>
+      </ul>
+    </div>
+    <div class="col-sm-4 border">
+　　　<ul class="list-group">
+　　　  <li class="list-group-item"><%= link_to '編集', edit_project_path(@project) %></li>
+　　　  <li class="list-group-item"><%= link_to '削除', @project, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
+　　　</ul>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,9 @@
+<% unless logged_in? %>
+
 <div class="center jumbotron">
   <div class="text-center">
-    <h1>Welcom to 案件管理ページ</h1>
+    <h1>Welcome to 案件管理ページ</h1>
+    <%= link_to 'ユーザ登録はこちら', signup_path %>
   </div>
 </div>
+<% end %>

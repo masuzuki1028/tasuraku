@@ -1,0 +1,28 @@
+<div class="text-center">
+  <h1>ユーザ詳細</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 top">
+　　　<table class="table table-striped">
+　　　  <tr>
+　　　    <td>氏名</td>
+　　　    <td><%= @user.name %> </td>
+　　　  </tr>
+　　　  <tr>
+　　　    <td>メール</td>
+　　　    <td><%= @user.email %></td>
+　　　  </tr>
+　　　</table>
+　　</div>
+
+    <div class="col-sm-4 border">
+　　　<ul class="list-group">
+　　　  <li class="list-group-item "><%= link_to '案件一覧', projects_path %></li>
+　　　  <li class="list-group-item"><%= link_to '紹介会社一覧', agents_path %></li>
+　　　  <li class="list-group-item"><%= link_to 'ユーザ情報編集', edit_user_path(@user) %></li>
+　　　</ul>
+    </div>
+  </div>
+</div>
