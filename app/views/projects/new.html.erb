@@ -9,7 +9,7 @@
 
        <div id="form-group">
          
-         <%= f.label :agent_id, 'エージェント' %>
+         <%= f.label :agent_id, '紹介会社' %>
          <%= f.collection_select  :agent_id, Agent.all, :id, :company, {}, class: 'form-control' %>
       </div>
 
